@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Abdullah Avenue — Shop via Instagram</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;700;800&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+:root{
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+  --bg:#eef0fb;--text:#14162b;--muted:#51567a;--glass:rgba(255,255,255,.45);--glass-b:rgba(255,255,255,.75);
+  --shadow:rgba(60,60,130,.18);--a:#7c5cff;--b:#ff5ca8;--c:#35d0ff;--field:rgba(255,255,255,.6);
+  --sy:0;--p:0;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#080a1a;--text:#f2f3ff;--muted:#a3a8d6;--glass:rgba(255,255,255,.08);--glass-b:rgba(255,255,255,.22);
+  --shadow:rgba(0,0,0,.45);--field:rgba(255,255,255,.1);}}
+:root[data-theme="dark"]{
+  --bg:#080a1a;--text:#f2f3ff;--muted:#a3a8d6;--glass:rgba(255,255,255,.08);--glass-b:rgba(255,255,255,.22);
+  --shadow:rgba(0,0,0,.45);--field:rgba(255,255,255,.1);}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 80px)}
+*,*:before,*:after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Manrope',system-ui,sans-serif;line-height:1.6;overflow-x:hidden;min-height:100vh}
+h1,h2,h3,.logo{font-family:'Sora','Manrope',sans-serif;line-height:1.15;margin:0}
+a{color:inherit;text-decoration:none}
+/* background blobs */
+.bg{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none}
+.blob{position:absolute;border-radius:50%;filter:blur(70px);opacity:.7;animation:float 14s ease-in-out infinite alternate}
+.b1{width:46vmax;height:46vmax;background:var(--a);top:-12vmax;left:-12vmax;transform:translateY(calc(var(--sy)*-.06px))}
+.b2{width:40vmax;height:40vmax;background:var(--b);top:30vh;right:-14vmax;animation-delay:-4s;transform:translateY(calc(var(--sy)*.05px))}
+.b3{width:36vmax;height:36vmax;background:var(--c);bottom:-14vmax;left:12vw;animation-delay:-8s;transform:translateY(calc(var(--sy)*-.04px))}
+@keyframes float{to{margin:6vmax 0 0 4vmax;scale:1.12}}
+/* glass */
+.glass{background:var(--glass);backdrop-filter:blur(22px) saturate(180%);-webkit-backdrop-filter:blur(22px) saturate(180%);
+  border:1px solid var(--glass-b);border-radius:26px;position:relative;
+  box-shadow:0 18px 50px var(--shadow),inset 0 1px 1px rgba(255,255,255,.55),inset 0 -1px 1px rgba(255,255,255,.1)}
+.glass:before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;
+  background:linear-gradient(135deg,rgba(255,255,255,.35),rgba(255,255,255,0) 40%,rgba(255,255,255,0) 60%,rgba(255,255,255,.15))}
+/* header */
+.bar{position:fixed;left:0;right:0;top:0;height:3px;z-index:60;background:linear-gradient(90deg,var(--a),var(--b),var(--c));transform-origin:left;transform:scaleX(var(--p))}
+header{position:fixed;top:calc(env(safe-area-inset-top,0px) + 10px);left:50%;translate:-50% 0;width:min(940px,calc(100% - 24px));z-index:50;
+  display:flex;align-items:center;justify-content:space-between;padding:10px 12px 10px 20px;border-radius:999px}
+.logo{font-weight:800;font-size:1.05rem;letter-spacing:-.02em}
+.logo span{background:linear-gradient(90deg,var(--a),var(--b));-webkit-background-clip:text;background-clip:text;color:transparent}
+.nav{display:flex;gap:16px;align-items:center;font-weight:600;font-size:.9rem}
+.nav a.l{color:var(--muted)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;cursor:pointer;font:700 .92rem 'Manrope',sans-serif;
+  padding:12px 22px;border-radius:999px;color:#fff;background:linear-gradient(135deg,var(--a),var(--b));
+  box-shadow:0 10px 26px rgba(124,92,255,.4),inset 0 1px 1px rgba(255,255,255,.5);transition:transform .25s,box-shadow .25s}
+.btn:hover{transform:translateY(-2px) scale(1.03)}
+.btn.ghost{background:var(--glass);color:var(--text);border:1px solid var(--glass-b);box-shadow:inset 0 1px 1px rgba(255,255,255,.4);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+@media(max-width:620px){.nav a.l{display:none}}
+/* sections */
+section{padding:90px 20px 40px;max-width:1040px;margin:0 auto}
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding-top:130px}
+.pill{display:inline-block;padding:8px 18px;border-radius:999px;font-size:.82rem;font-weight:700;margin-bottom:22px}
+.hero h1{font-size:clamp(2.5rem,8vw,5.2rem);font-weight:800;letter-spacing:-.04em}
+.grad{background:linear-gradient(90deg,var(--a),var(--b),var(--c));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{max-width:560px;color:var(--muted);font-size:1.1rem;margin:22px auto 30px}
+.cta{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+.hero{padding-bottom:140px}
+.hint{margin-top:50px;font-size:.8rem;color:var(--muted);animation:bob 2s infinite}
+@keyframes bob{50%{transform:translateY(8px)}}
+h2{font-size:clamp(1.8rem,5vw,2.8rem);text-align:center;font-weight:800;letter-spacing:-.03em;margin-bottom:12px}
+.sub{text-align:center;color:var(--muted);max-width:520px;margin:0 auto 40px}
+.perks,.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.perk,.step{padding:26px}
+.perk .ic,.step .n{font-size:1.8rem;margin-bottom:10px;font-family:'Sora',sans-serif;font-weight:800}
+.step .n{width:42px;height:42px;display:grid;place-items:center;border-radius:50%;font-size:1.1rem;color:#fff;background:linear-gradient(135deg,var(--a),var(--b))}
+.perk h3,.step h3{font-size:1.1rem;margin-bottom:6px}
+.perk p,.step p{margin:0;color:var(--muted);font-size:.95rem}
+/* products */
+#grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));gap:22px}
+.media{position:relative;z-index:1;background:#fff;min-height:200px}
+.media iframe{width:100%;height:720px;border:0;display:block}
+.play{position:absolute;bottom:16px;left:50%;translate:-50% 0;z-index:2;white-space:nowrap}
+.cap{padding:12px 14px;border-radius:16px;background:var(--glass);border:1px solid var(--glass-b)}
+.cap-h{font-size:.7rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.cap-t{white-space:pre-line;font-size:.9rem;word-break:break-word}
+.cap-t.clamp{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.more{background:none;border:0;color:var(--a);font:700 .82rem 'Manrope',sans-serif;cursor:pointer;padding:6px 0 0}
+.card{overflow:hidden;display:flex;flex-direction:column;transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+.card:hover{transform:translateY(-8px) rotateX(2deg)}
+.ph{aspect-ratio:4/5;background:linear-gradient(135deg,var(--a),var(--b) 60%,var(--c));display:grid;place-items:center;font-size:3rem;overflow:hidden;position:relative;z-index:1}
+.ph img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.card:hover .ph img{transform:scale(1.07)}
+.info{padding:18px 20px 20px;display:flex;flex-direction:column;gap:8px;flex:1;position:relative;z-index:1}
+.info h3{font-size:1.15rem}
+.price{font-weight:800;color:var(--a);font-family:'Sora',sans-serif}
+.info p{margin:0;color:var(--muted);font-size:.9rem;flex:1}
+.tags{display:flex;gap:6px;flex-wrap:wrap}
+.tags span{font-size:.7rem;font-weight:700;padding:4px 10px;border-radius:999px;background:var(--glass);border:1px solid var(--glass-b)}
+.acts{display:flex;gap:8px;margin-top:6px}
+.acts .btn{flex:1;padding:11px 10px;font-size:.85rem}
+.del{position:absolute;top:10px;right:10px;z-index:3;display:none;width:34px;height:34px;border-radius:50%;border:0;cursor:pointer;background:rgba(220,40,70,.9);color:#fff;font-size:1rem}
+body.admin .del{display:block}
+.empty{text-align:center;color:var(--muted);grid-column:1/-1}
+/* reveal */
+.reveal{opacity:0;transform:translateY(46px) scale(.97);filter:blur(8px);transition:opacity .9s,transform .9s cubic-bezier(.2,.8,.2,1),filter .9s}
+.reveal.in{opacity:1;transform:none;filter:none}
+footer{text-align:center;padding:60px 20px calc(110px + env(safe-area-inset-bottom,0px));color:var(--muted);font-size:.9rem}
+.fab{position:fixed;right:18px;bottom:calc(env(safe-area-inset-bottom,0px) + 18px);z-index:55}
+/* modal */
+.modal{position:fixed;inset:0;z-index:80;display:none;place-items:center;padding:16px;background:rgba(5,6,20,.5);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.modal.open{display:grid}
+.panel{width:min(460px,100%);max-height:90vh;overflow:auto;padding:26px;animation:pop .45s cubic-bezier(.2,.9,.3,1.2)}
+@keyframes pop{from{opacity:0;transform:scale(.9) translateY(20px)}}
+.panel h3{font-size:1.3rem;margin-bottom:14px;position:relative;z-index:1}
+.panel>*{position:relative;z-index:1}
+label{display:block;font-size:.8rem;font-weight:700;margin:12px 0 5px;color:var(--muted)}
+input,textarea{width:100%;font:500 .95rem 'Manrope',sans-serif;color:var(--text);background:var(--field);border:1px solid var(--glass-b);border-radius:14px;padding:12px 14px;outline:none}
+input:focus,textarea:focus{border-color:var(--a)}
+textarea{min-height:80px;resize:vertical}
+.hide{display:none!important}
+.row{display:flex;gap:10px;margin-top:18px}.row .btn{flex:1}
+.msg{font-size:.85rem;color:#ff4d6d;min-height:1.2em;margin-top:8px}
+.toast{position:fixed;left:50%;bottom:calc(env(safe-area-inset-bottom,0px) + 90px);translate:-50% 20px;opacity:0;z-index:90;padding:12px 20px;border-radius:999px;font-weight:600;font-size:.88rem;transition:.4s;pointer-events:none;max-width:90vw;text-align:center}
+.toast.show{opacity:1;translate:-50% 0}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none;filter:none}}
+</style>
+</head>
+<body class="">
+<div class="bar"></div>
+<div class="bg"><i class="blob b1"></i><i class="blob b2"></i><i class="blob b3"></i></div>
+
+<header class="glass">
+  <a href="#top" class="logo">Abdullah <span>Avenue</span></a>
+  <nav class="nav"><a class="l" href="#how">How to Order</a><a class="l" href="#products">Products</a>
+    <a class="btn" href="https://www.instagram.com/abdullah_avenue" target="_blank" rel="noopener">Instagram</a></nav>
+</header>
+
+<main id="top">
+<section class="hero">
+  <span class="pill glass reveal">🇵🇰 Delivery all over Pakistan</span>
+  <h1 class="reveal">Shop what you<br><span class="grad">see on Instagram</span></h1>
+  <p class="reveal">Scroll through our latest posts, pick what you love, and DM us to order. Cash on Delivery. Fast shipping everywhere in Pakistan.</p>
+  <div class="cta reveal">
+    <a class="btn" href="#products">Browse Products</a>
+    <a class="btn ghost" href="https://www.instagram.com/abdullah_avenue" target="_blank" rel="noopener">@abdullah_avenue</a>
+  </div>
+  <div class="hint">Scroll ↓</div>
+</section>
+
+<section>
+  <div class="perks">
+    <div class="perk glass reveal"><div class="ic">💵</div><h3>Cash on Delivery</h3><p>Pay only when your parcel reaches your door.</p></div>
+    <div class="perk glass reveal"><div class="ic">🚚</div><h3>Fast Delivery</h3><p>Quick dispatch and delivery all over Pakistan.</p></div>
+    <div class="perk glass reveal"><div class="ic">💬</div><h3>Order via DM</h3><p>Simple, personal ordering on Instagram.</p></div>
+  </div>
+</section>
+
+<section id="how">
+  <h2 class="reveal">How to <span class="grad">Order</span></h2>
+  <p class="sub reveal">Four easy steps. No account, no card needed.</p>
+  <div class="steps">
+    <div class="step glass reveal"><div class="n">1</div><h3>Pick a product</h3><p>Scroll the collection below and choose your favourite.</p></div>
+    <div class="step glass reveal"><div class="n">2</div><h3>Tap "Order"</h3><p>It opens our Instagram profile.</p></div>
+    <div class="step glass reveal"><div class="n">3</div><h3>Send us a DM</h3><p>Share the product name, your name, phone and full address.</p></div>
+    <div class="step glass reveal"><div class="n">4</div><h3>Pay on delivery</h3><p>Receive your parcel and pay cash to the rider.</p></div>
+  </div>
+</section>
+
+<section id="products">
+  <h2 class="reveal">Latest <span class="grad">Products</span></h2>
+  <p class="sub reveal">Fresh from our Instagram feed.</p>
+  <div id="grid"></div>
+</section>
+</main>
+
+<footer>
+  <div class="glass reveal" style="padding:30px;max-width:520px;margin:0 auto 24px">
+    <h3 style="margin-bottom:8px">Ready to order?</h3>
+    <p style="margin:0 0 16px">DM us on Instagram — Cash on Delivery, all over Pakistan.</p>
+    <a class="btn" href="https://www.instagram.com/abdullah_avenue" target="_blank" rel="noopener">Message on Instagram</a>
+  </div>
+  © Abdullah Avenue
+</footer>
+
+<button class="btn fab" id="addBtn">＋ Add Product</button>
+<div class="toast glass" id="toast"></div>
+
+<div class="modal" id="modal">
+  <div class="panel glass">
+    <div id="s1" class="hide">
+      <h3>🔒 Admin access</h3>
+      <label for="pw">Enter admin password</label>
+      <input id="pw" type="password" autocomplete="off" placeholder="Password">
+      <div class="msg" id="m1"></div>
+      <div class="row"><button class="btn ghost" data-close="">Cancel</button><button class="btn" id="unlock">Unlock</button></div>
+    </div>
+    <div id="s2" class="">
+      <h3>Add new product</h3>
+      <label for="f-link">Instagram post link *</label>
+      <input id="f-link" placeholder="https://www.instagram.com/p/...">
+      <label for="f-title">Product name *</label>
+      <input id="f-title" placeholder="e.g. Premium Leather Wallet">
+      <label for="f-price">Price</label>
+      <input id="f-price" placeholder="e.g. Rs. 2,499">
+      <label for="f-desc">Details</label>
+      <textarea id="f-desc" placeholder="Colour, size, quality..."></textarea>
+      <label for="f-cap">Instagram caption (copy from your post)</label>
+      <textarea id="f-cap" placeholder="Paste the post caption here so customers can read it"></textarea>
+      <label for="f-img">Cover photo (optional, shows before the post loads)</label>
+      <input id="f-img" type="file" accept="image/*">
+      <details id="gh"><summary style="cursor:pointer;font-weight:700;font-size:.85rem;margin-top:14px">GitHub connection (one-time setup)</summary>
+        <label>GitHub username</label><input id="gh-owner" autocomplete="off">
+        <label>Repository name</label><input id="gh-repo" autocomplete="off">
+        <label>Branch</label><input id="gh-branch" autocomplete="off">
+        <label>Access token (stays only on this device)</label><input id="gh-token" type="password" autocomplete="off" placeholder="github_pat_...">
+      </details>
+      <div class="msg" id="m2"></div>
+      <div class="row"><button class="btn ghost" data-close="">Close</button><button class="btn" id="save" disabled="">Publishing…</button></div>
+    </div>
+  </div>
+</div>
+
+<script id="data" type="application/json">[{"id":"p1","link":"https://www.instagram.com/p/DejWKBcIqBK/","title":"Featured Product #1","price":"","desc":"See full photos, price and details on our Instagram post.","img":""},{"id":"p2","link":"https://www.instagram.com/p/Deg4Rc4CEGC/","title":"Featured Product #2","price":"","desc":"See full photos, price and details on our Instagram post.","img":""},{"id":"p1792152939068","link":"https://www.instagram.com/p/Deg4Rc4CEGC/","title":"3 piece woman unstitched suit","price":"2100","desc":"Blue and golden color available in all sizes","img":""}]</script>
+<script>
+(function(){
+var PROFILE="https://www.instagram.com/abdullah_avenue";
+var HASH="18c780b0a8409731c329a3e46bb2efabf906be8d170e8b65679ddb89add14d83";
+var $=function(s){return document.querySelector(s)};
+var products=[];
+try{products=JSON.parse($("#data").textContent)||[]}catch(e){products=[]}
+var root=document.documentElement;
+
+function toast(t){var el=$("#toast");el.textContent=t;el.classList.add("show");clearTimeout(toast.t);toast.t=setTimeout(function(){el.classList.remove("show")},3200)}
+function mk(tag,cls,txt){var e=document.createElement(tag);if(cls)e.className=cls;if(txt!=null)e.textContent=txt;return e}
+
+/* scroll effects */
+var ticking=false;
+function onScroll(){if(ticking)return;ticking=true;requestAnimationFrame(function(){
+  var h=document.body.scrollHeight-innerHeight,y=scrollY;
+  root.style.setProperty("--sy",y);root.style.setProperty("--p",h>0?Math.min(y/h,1):0);ticking=false})}
+addEventListener("scroll",onScroll,{passive:true});onScroll();
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.12});
+function watch(){document.querySelectorAll(".reveal:not(.in)").forEach(function(el){io.observe(el)})}
+
+/* render */
+function embedUrl(l){var m=/instagram\.com\/(p|reel|tv)\/([\w-]+)/i.exec(l||"");return m?"https://www.instagram.com/"+m[1].toLowerCase()+"/"+m[2]+"/embed/captioned/":l}
+function render(){
+  var g=$("#grid");g.innerHTML="";
+  if(!products.length){g.appendChild(mk("p","empty","New products coming soon. Follow us on Instagram!"));return}
+  products.slice().reverse().forEach(function(p,i){
+    var c=mk("article","card glass reveal");c.style.transitionDelay=(i%3)*90+"ms";
+    var ph=mk("div","ph");
+    function loadEmbed(){ph.innerHTML="";ph.className="media";var f=document.createElement("iframe");f.src=embedUrl(p.link);f.title=p.title;f.loading="lazy";f.allowFullscreen=true;f.setAttribute("allow","autoplay; encrypted-media; fullscreen; picture-in-picture");f.setAttribute("scrolling","no");ph.appendChild(f)}
+    if(p.img){var im=document.createElement("img");im.src=p.img;im.alt=p.title;im.loading="lazy";ph.appendChild(im);var pb=mk("button","btn play","▶ Open post / play reel");pb.onclick=loadEmbed;ph.appendChild(pb)}else loadEmbed();
+    var info=mk("div","info");
+    var tags=mk("div","tags");["Cash on Delivery","Pakistan-wide"].forEach(function(t){tags.appendChild(mk("span",null,t))});
+    info.appendChild(tags);info.appendChild(mk("h3",null,p.title));
+    if(p.price)info.appendChild(mk("div","price",p.price));
+    if(p.desc)info.appendChild(mk("p",null,p.desc));
+    if(p.cap){var cp=mk("div","cap");var ct=mk("div","cap-t",p.cap);cp.appendChild(mk("div","cap-h","Caption"));cp.appendChild(ct);
+      if(p.cap.length>140){ct.classList.add("clamp");var mb=mk("button","more","Read more");mb.onclick=function(){var o=ct.classList.toggle("clamp");mb.textContent=o?"Read more":"Show less"};cp.appendChild(mb)}
+      info.appendChild(cp)}
+    var acts=mk("div","acts");
+    var o=mk("button","btn","Order on Instagram");
+    o.onclick=function(){
+      var m="Hi! I want to order: "+p.title+(p.price?" ("+p.price+")":"")+"\n"+p.link;
+      try{navigator.clipboard.writeText(m)}catch(e){}
+      toast("Order message copied — paste it in our DM!");
+      setTimeout(function(){window.open(PROFILE,"_blank","noopener")},700)};
+    var v=mk("a","btn ghost","View post");v.href=p.link;v.target="_blank";v.rel="noopener";
+    acts.appendChild(o);acts.appendChild(v);info.appendChild(acts);
+    var d=mk("button","del","✕");d.title="Remove";d.onclick=function(){
+      if(confirm("Remove this product for everyone?")){var bk=products;products=products.filter(function(x){return x.id!==p.id});save("Product removed").then(function(ok){if(!ok)products=bk;render()})}};
+    c.appendChild(d);c.appendChild(ph);c.appendChild(info);g.appendChild(c)});
+  watch();
+}
+
+/* publish new version of this page with current products */
+function autoCfg(){var h=location.hostname,p=location.pathname.split("/")[1]||"",o=/\.github\.io$/.test(h)?h.split(".")[0]:"";
+  return{owner:o,repo:(p&&p.indexOf(".")<0)?p:(o?o+".github.io":""),branch:"main",token:""}}
+function fillCfg(){var c=autoCfg(),k={};try{k=JSON.parse(localStorage.getItem("ghcfg")||"{}")}catch(e){}
+  ["owner","repo","branch","token"].forEach(function(n){$("#gh-"+n).value=k[n]||c[n]||""})}
+function readCfg(){var c={};["owner","repo","branch","token"].forEach(function(n){c[n]=$("#gh-"+n).value.trim()});c.branch=c.branch||"main";return c}
+function b64(t){return btoa(unescape(encodeURIComponent(t)))}
+/* save products.json to your GitHub repo */
+async function save(okMsg){
+  var c=readCfg();
+  if(!c.owner||!c.repo||!c.token){$("#gh").open=true;toast("Fill in the GitHub connection first.");return false}
+  var api="https://api.github.com/repos/"+c.owner+"/"+c.repo+"/contents/products.json";
+  var H={Authorization:"Bearer "+c.token,Accept:"application/vnd.github+json","Content-Type":"application/json"};
+  try{
+    var sha,r=await fetch(api+"?ref="+encodeURIComponent(c.branch)+"&t="+Date.now(),{headers:H,cache:"no-store"});
+    if(r.ok)sha=(await r.json()).sha;else if(r.status!==404)throw new Error(r.status);
+    var body={message:"Update products",content:b64(JSON.stringify(products,null,1)),branch:c.branch};if(sha)body.sha=sha;
+    var w=await fetch(api,{method:"PUT",headers:H,body:JSON.stringify(body)});
+    if(!w.ok)throw new Error(w.status);
+    try{localStorage.setItem("ghcfg",JSON.stringify(c))}catch(e){}
+    toast((okMsg||"Saved!")+" Live for everyone in about 1 minute.");return true
+  }catch(e){$("#gh").open=true;toast("Couldn't save to GitHub (error "+e.message+"). Check username, repo and token.");return false}
+}
+
+/* admin */
+var unlocked=false,modal=$("#modal");
+function show(step){$("#s1").classList.toggle("hide",step!==1);$("#s2").classList.toggle("hide",step!==2)}
+$("#addBtn").onclick=function(){fillCfg();modal.classList.add("open");show(unlocked?2:1);if(!unlocked)setTimeout(function(){$("#pw").focus()},50)};
+document.querySelectorAll("[data-close]").forEach(function(b){b.onclick=function(){modal.classList.remove("open")}});
+modal.addEventListener("click",function(e){if(e.target===modal)modal.classList.remove("open")});
+async function sha(s){var b=await crypto.subtle.digest("SHA-256",new TextEncoder().encode(s));return Array.from(new Uint8Array(b)).map(function(x){return x.toString(16).padStart(2,"0")}).join("")}
+async function tryUnlock(){
+  var v=$("#pw").value.trim();
+  if((await sha(v))===HASH){unlocked=true;document.body.classList.add("admin");$("#pw").value="";$("#m1").textContent="";show(2)}
+  else $("#m1").textContent="Wrong password. Try again."}
+$("#unlock").onclick=tryUnlock;
+$("#pw").addEventListener("keydown",function(e){if(e.key==="Enter")tryUnlock()});
+
+function shrink(file){return new Promise(function(res){
+  var r=new FileReader();r.onload=function(){var im=new Image();im.onload=function(){
+    var s=Math.min(1,720/Math.max(im.width,im.height)),cv=document.createElement("canvas");
+    cv.width=im.width*s;cv.height=im.height*s;cv.getContext("2d").drawImage(im,0,0,cv.width,cv.height);
+    res(cv.toDataURL("image/jpeg",.75))};im.onerror=function(){res("")};im.src=r.result};
+  r.onerror=function(){res("")};r.readAsDataURL(file)})}
+
+$("#save").onclick=async function(){
+  var link=$("#f-link").value.trim(),title=$("#f-title").value.trim(),m=$("#m2");
+  if(!/^https:\/\/(www\.)?instagram\.com\/(p|reel|tv)\/[\w-]+/i.test(link)){m.textContent="Paste a valid Instagram post link.";return}
+  if(!title){m.textContent="Please enter a product name.";return}
+  m.textContent="";var btn=this;btn.disabled=true;btn.textContent="Publishing…";
+  var f=$("#f-img").files[0],img=f?await shrink(f):"";
+  var clean=link.split("?")[0];
+  products.push({id:"p"+Date.now(),link:clean,title:title,price:$("#f-price").value.trim(),desc:$("#f-desc").value.trim(),cap:$("#f-cap").value.trim(),img:img});
+  var ok=await save("Product published for everyone!");
+  btn.disabled=false;btn.textContent="Publish product";
+  if(ok){modal.classList.remove("open");render()}else{products.pop()}
+};
+
+render();watch();
+fetch("products.json?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.ok?r.json():null}).then(function(d){if(Array.isArray(d)){products=d;render()}}).catch(function(){});
+})();
+</script>
+
+
+</body></html>
